@@ -1,7 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Christmas Light</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .nav {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            width: 200px;
+            background-color: #f4f4f4;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        .nav a {
+            text-decoration: none;
+            padding: 15px;
+            color: #333;
+            display: block;
+        }
+        .nav a:hover {
+            background-color: #ddd;
+        }
+        .content {
+            margin-left: 220px;
+            padding: 20px;
+            width: calc(100% - 220px);
+        }
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+            .dropdown {
+                display: block;
+                background-color: #f4f4f4;
+                width: 100%;
+                text-align: center;
+                padding: 10px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+            .dropdown a {
+                display: block;
+                padding: 10px;
+                text-decoration: none;
+                color: #333;
+            }
+            .dropdown a:hover {
+                background-color: #ddd;
+            }
+            .content {
+                margin-left: 0;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>Nice to meet you.</p>
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <div class="dropdown">
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <div class="content">
+        <div class="container">
+            <h1>Welcome to My Christmas Light Display</h1>
+            <p>This is where the holiday magic happens! Explore the features of our Christmas light display and learn more about how you can contact us.</p>
+        </div>
+    </div>
 </body>
 </html>
