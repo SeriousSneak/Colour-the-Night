@@ -67,7 +67,7 @@
             top: 20px;
             cursor: pointer;
         }
-        .toggle-theme svg {
+        .toggle-theme img {
             width: 24px;
             height: 24px;
         }
@@ -129,11 +129,11 @@
         function toggleTheme() {
             var body = document.body;
             body.classList.toggle('dark-mode');
-            var themeIcon = document.querySelector('.toggle-theme svg');
+            var themeIcon = document.getElementById('theme-icon');
             if (body.classList.contains('dark-mode')) {
-                themeIcon.innerHTML = '<path d="M12 4.5C7.804 4.5 4.5 7.804 4.5 12C4.5 16.196 7.804 19.5 12 19.5C16.196 19.5 19.5 16.196 19.5 12C19.5 7.804 16.196 4.5 12 4.5ZM12 3C12.8284 3 13.5 2.32843 13.5 1.5C13.5 0.671573 12.8284 0 12 0C11.1716 0 10.5 0.671573 10.5 1.5C10.5 2.32843 11.1716 3 12 3ZM18 15C18.8284 15 19.5 14.3284 19.5 13.5C19.5 12.6716 18.8284 12 18 12C17.1716 12 16.5 12.6716 16.5 13.5C16.5 14.3284 17.1716 15 18 15ZM18 9C18.8284 9 19.5 8.32843 19.5 7.5C19.5 6.67157 18.8284 6 18 6C17.1716 6 16.5 6.67157 16.5 7.5C16.5 8.32843 17.1716 9 18 9ZM6 15C6.82843 15 7.5 14.3284 7.5 13.5C7.5 12.6716 6.82843 12 6 12C5.17157 12 4.5 12.6716 4.5 13.5C4.5 14.3284 5.17157 15 6 15ZM6 9C6.82843 9 7.5 8.32843 7.5 7.5C7.5 6.67157 6.82843 6 6 6C5.17157 6 4.5 6.67157 4.5 7.5C4.5 8.32843 5.17157 9 6 9Z" />';
+                themeIcon.src = 'sun-icon.png'; // Make sure to have a sun-icon.png image file
             } else {
-                themeIcon.innerHTML = '<path d="M6.76 4.84L4.93 3.02L3.02 4.93L4.84 6.76L6.76 4.84ZM12 4V1H12V4ZM19.07 4.93L17.24 3.02L15.31 4.93L17.24 6.76L19.07 4.93ZM21 12H24V12H21ZM17.24 17.24L19.07 19.07L17.24 17.24ZM12 20V23H12V20ZM6.76 19.07L4.93 17.24L3.02 19.07L4.84 20.89L6.76 19.07ZM1 12H4V12H1Z" />';
+                themeIcon.src = 'moon-icon.png'; // Make sure to have a moon-icon.png image file
             }
         }
     </script>
@@ -155,12 +155,12 @@
         <a href="contact.html">Contact</a>
     </div>
     <div class="toggle-theme" onclick="toggleTheme()">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.76 4.84L4.93 3.02L3.02 4.93L4.84 6.76L6.76 4.84ZM12 4V1H12V4ZM19.07 4.93L17.24 3.02L15.31 4.93L17.24 6.76L19.07 4.93ZM21 12H24V12H21ZM17.24 17.24L19.07 19.07L17.24 17.24ZM12 20V23H12V20ZM6.76 19.07L4.93 17.24L3.02 19.07L4.84 20.89L6.76 19.07ZM1 12H4V12H1Z" /></svg>
+        <img id="theme-icon" src="moon-icon.png" alt="Toggle theme">
     </div>
     <div class="content">
         <div class="container">
             <h1>Welcome to My Christmas Light Display</h1>
-                        <p>This is where the holiday magic happens! Explore the features of our Christmas light display and learn more about how you can contact us.</p>
+            <p>This is where the holiday magic happens! Explore the features of our Christmas light display and learn more about how you can contact us.</p>
         </div>
     </div>
 </body>
