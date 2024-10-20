@@ -24,6 +24,7 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: max-height 0.3s ease-in-out;
         }
 
         .navbar a {
@@ -67,11 +68,19 @@
             .navbar {
                 flex-direction: column;
                 align-items: flex-start;
-                display: none;
+                max-height: 0;
+                overflow: hidden;
+                display: block;
             }
 
             .navbar.open {
-                display: flex;
+                max-height: 400px; /* Expandable height */
+            }
+
+            .navbar a {
+                width: 100%;
+                text-align: left;
+                padding-left: 50px; /* Offset to clear the hamburger */
             }
 
             .hamburger {
