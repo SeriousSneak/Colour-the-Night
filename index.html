@@ -10,28 +10,32 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
         }
 
         /* Navigation bar styling */
-        .sidebar {
-            width: 250px;
-            background-color: #333;
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #f4f4f4; /* Matching the rest of the page */
+            padding: 10px;
             position: fixed;
-            height: 100%;
-            overflow: auto;
-            transition: all 0.3s;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        .sidebar a {
-            display: block;
-            color: white;
-            padding: 16px;
+        .navbar a {
             text-decoration: none;
+            color: #333;
+            padding: 8px 16px;
+            font-size: 18px;
         }
 
-        .sidebar a:hover {
-            background-color: #575757;
+        .navbar a:hover {
+            background-color: #ddd;
+            border-radius: 4px;
         }
 
         /* Header image */
@@ -42,65 +46,58 @@
             text-align: center;
             line-height: 200px;
             font-size: 24px;
+            margin-top: 60px; /* Adjust for navbar height */
         }
 
         /* Content styling */
         .content {
-            margin-left: 250px;
             padding: 16px;
-            width: 100%;
+            margin-top: 20px; /* Extra margin for spacing */
         }
 
         /* Hamburger menu */
         .hamburger {
             display: none;
             font-size: 30px;
-            position: fixed;
-            top: 10px;
-            left: 10px;
             cursor: pointer;
-            z-index: 1001;
         }
 
         /* Mobile styling */
         @media screen and (max-width: 768px) {
-            .sidebar {
-                width: 0;
-                position: fixed;
-                top: 0;
-                left: 0;
-                height: 100%;
-                z-index: 1000;
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                display: none;
             }
 
-            .sidebar.open {
-                width: 250px;
-            }
-
-            .content {
-                margin-left: 0;
+            .navbar.open {
+                display: flex;
             }
 
             .hamburger {
                 display: block;
+                position: fixed;
+                top: 10px;
+                left: 10px;
+                z-index: 1001;
             }
         }
     </style>
     <script>
-        // JavaScript for toggling the sidebar on mobile
-        function toggleSidebar() {
-            var sidebar = document.querySelector(".sidebar");
-            sidebar.classList.toggle("open");
+        // JavaScript for toggling the navbar on mobile
+        function toggleNavbar() {
+            var navbar = document.querySelector(".navbar");
+            navbar.classList.toggle("open");
         }
     </script>
 </head>
 <body>
 
     <!-- Hamburger menu for mobile -->
-    <div class="hamburger" onclick="toggleSidebar()">&#9776;</div>
+    <div class="hamburger" onclick="toggleNavbar()">&#9776;</div>
 
-    <!-- Sidebar navigation -->
-    <div class="sidebar">
+    <!-- Top navigation bar -->
+    <div class="navbar">
         <a href="#">Home</a>
         <a href="#">About Us</a>
         <a href="#">Services</a>
